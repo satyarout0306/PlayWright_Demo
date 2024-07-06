@@ -24,7 +24,7 @@ This project contains a Playwright Page Object Model (POM) framework designed to
     ```
 
 ## Project Structure
-
+```
 ├── pages
 │   ├── BasePage.ts
 │   ├── LoginPage.ts
@@ -39,7 +39,8 @@ This project contains a Playwright Page Object Model (POM) framework designed to
 │   └── testConfig.ts
 ├── playwright.config.ts
 ├── package.json
-└── tsconfig.json
+└── tsconfig.json 
+```
 
 	•	tests/: Contains the test files.
 	•	pages/: Contains the Page Object Model (POM) classes.
