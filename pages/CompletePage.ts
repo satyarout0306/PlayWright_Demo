@@ -1,25 +1,22 @@
 import { Page, Locator } from '@playwright/test';
+import CompletePageLocators from '../locators/ComplatePageLocators';
 
 class CompletePage {
   private page: Page;
-  private backToProductsButton: Locator;
-  private menuButton: Locator;
-  private logoutLink: Locator;
+  private locators: CompletePageLocators;
 
   constructor(page: Page) {
     this.page = page;
-    this.backToProductsButton = page.locator('[data-test="back-to-products"]');
-    this.menuButton = page.getByRole('button', { name: 'Open Menu' });
-    this.logoutLink = page.locator('[data-test="logout-sidebar-link"]');
+    this.locators = new CompletePageLocators(page);
   }
 
   async backToProducts() {
-    await this.backToProductsButton.click();
+    await this.locators.backToProductsButton.click();
   }
 
   async logout() {
-    await this.menuButton.click();
-    await this.logoutLink.click();
+    await this.locators.menuButton.click();
+    await this.locators.logoutLink.click();
   }
 }
 

@@ -1,16 +1,18 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
+import CartPageLocators from '../locators/CartPageLocators';
 
 class CartPage {
   private page: Page;
-  private checkoutButton: Locator;
+  private locators: CartPageLocators;
 
   constructor(page: Page) {
     this.page = page;
-    this.checkoutButton = page.locator('[data-test="checkout"]');
+    this.locators = new CartPageLocators(page);
   }
 
   async proceedToCheckout() {
-    await this.checkoutButton.click();
+    await expect(this.locators.pageTitle_cart).toHaveText("Your Cart");
+    await this.locators.checkoutButton.click();
   }
 }
 

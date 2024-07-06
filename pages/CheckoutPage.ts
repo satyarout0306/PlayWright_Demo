@@ -1,31 +1,25 @@
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
+import CheckoutPageLocators from '../locators/CheckoutPageLocators';
 
 class CheckoutPage {
   private page: Page;
-  private firstNameInput: Locator;
-  private lastNameInput: Locator;
-  private postalCodeInput: Locator;
-  private continueButton: Locator;
-  private finishButton: Locator;
+  private locators: CheckoutPageLocators;
 
   constructor(page: Page) {
     this.page = page;
-    this.firstNameInput = page.locator('[data-test="firstName"]');
-    this.lastNameInput = page.locator('[data-test="lastName"]');
-    this.postalCodeInput = page.locator('[data-test="postalCode"]');
-    this.continueButton = page.locator('[data-test="continue"]');
-    this.finishButton = page.locator('[data-test="finish"]');
+    this.locators = new CheckoutPageLocators(page);
   }
 
   async fillCheckoutInformation(firstName: string, lastName: string, postalCode: string) {
-    await this.firstNameInput.fill(firstName);
-    await this.lastNameInput.fill(lastName);
-    await this.postalCodeInput.fill(postalCode);
-    await this.continueButton.click();
+    await this.locators.firstNameInput.fill(firstName);
+    await this.locators.lastNameInput.fill(lastName);
+    await this.locators.postalCodeInput.fill(postalCode);
+    await this.locators.continueButton.click();
   }
 
   async completeCheckout() {
-    await this.finishButton.click();
+    await expect(this.locators.pageTitle).toHaveText("Checkout: Overview");
+    await this.locators.finishButton.click();
   }
 }
 
