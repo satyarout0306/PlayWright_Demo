@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Jul 07 11:02:05 IST 2024","Sun Jul 07 11:02:08 IST 2024","2425","chromium","login.test.ts","Customer product checkout flow","","","successful checkout",""
+"passed","Sun Jul 07 11:02:05 IST 2024","Sun Jul 07 11:02:07 IST 2024","1710","firefox","login.test.ts","Customer product checkout flow","","","successful checkout",""
+"passed","Sun Jul 07 11:02:05 IST 2024","Sun Jul 07 11:02:08 IST 2024","2698","webkit","login.test.ts","Customer product checkout flow","","","successful checkout",""
