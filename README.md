@@ -65,6 +65,13 @@ To generate and view the test report:
     ```sh
     npx playwright show-report
     ```
+To generate Allure Report:
+    ```
+    npx allure generate ./allure-results --clean
+    npx allure open 
+    ```
+
+    
 
 ## Additional Resources
 
