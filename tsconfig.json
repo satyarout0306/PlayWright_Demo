@@ -1,12 +1,13 @@
 {
     "compilerOptions": {
       "target": "ES6",
-      "module": "CommonJS",
+      "module": "commonjs",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "outDir": "./dist"
+
     },
-    "include": ["./locators/**/*.ts", "./pages/**/*.ts", "./tests/**/*.ts", "./utils/**/*.ts"]
+    "include": ["src/locators/**/*.ts", "./pages/**/*.ts", "src/tests/**/*.ts", "src/utils/**/*.ts", "tests-examples/string.ts"]
   }
