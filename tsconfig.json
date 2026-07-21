@@ -6,8 +6,9 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
+      "types": ["node"],
       "outDir": "./dist"
 
     },
-    "include": ["src/locators/**/*.ts", "./pages/**/*.ts", "src/tests/**/*.ts", "src/utils/**/*.ts", "tests-examples/string.ts"]
+    "include": ["src/locators/**/*.ts", "./pages/**/*.ts", "src/tests/**/*.ts", "src/utils/**/*.ts", "tests-examples/string.ts", "playwright.config.ts"]
   }
